@@ -14,11 +14,6 @@ export function ExpenseChart() {
       .filter((transaction) => transaction.amount < 0)
       .reduce((acc, transaction) => (acc += transaction.amount), 0) * -1;
 
-  console.log({
-    totalIncomes,
-    totalExpenses,
-  });
-
   const expensesPercentage = Math.round((totalExpenses / totalIncomes) * 100);
   const incomesPercentage = 100 - expensesPercentage;
 
@@ -26,7 +21,7 @@ export function ExpenseChart() {
     return (
       <div className="border-dashed border-2 border-zinc-600 p-4 my-2">
         <div className="h-full flex items-center justify-center w-full flex-col">
-          <ImFileEmpty className="text-9xl"/>
+          <ImFileEmpty className="text-9xl" />
           <h1 className="text-1xl font-bold my-2">No hay datos</h1>
         </div>
       </div>
